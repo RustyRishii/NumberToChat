@@ -7,6 +7,7 @@ function IndexOptions() {
     <div
       style={{
         display: "flex",
+        flex: 1,
         flexDirection: "column",
         padding: 16
       }}>

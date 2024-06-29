@@ -8,13 +8,20 @@ function IndexPopup() {
       style={{
         display: "flex",
         flexDirection: "column",
-        padding: 16
+        padding: "16px",
+        width: "400px", // Adjust width as necessary
+        height: "200px", // Adjust height as necessary
+        overflow: "hidden" // Ensures content doesn't overflow the container
+        //boxSizing: "border-box"
       }}>
       <h1>
-        Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
+        This is plasmo <a href="https://www.plasmo.com">Plasmo</a> Extension!
       </h1>
+      <p>{data}</p>
       <input onChange={(e) => setData(e.target.value)} value={data} />
-      <footer>Crafted by @PlasmoHQ</footer>
+      <a href="https://linktr.ee/rustyrishi">
+        <footer>Crafted by @rustyrishii</footer>
+      </a>
     </div>
   )
 }
