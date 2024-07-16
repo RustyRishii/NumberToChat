@@ -1,8 +1,8 @@
 {
-  "name": "selection-calculator",
-  "displayName": "Selection calculator",
+  "name": "numbertochat",
+  "displayName": "NumberToChat",
   "version": "0.0.1",
-  "description": "Make calculations by selection numbers on the webpage",
+  "description": "This extension streamlines your messaging experience by allowing you to quickly initiate a chat with any contact. Simply open the extension, enter a phone number, and press enter to be directed to the corresponding chat window",
   "author": "Rishikesh Bidkar",
   "scripts": {
     "dev": "plasmo dev",

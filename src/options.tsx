@@ -1,4 +1,5 @@
 import { useState } from "react"
+import React = require("react")
 
 function IndexOptions() {
   const [data, setData] = useState("")
