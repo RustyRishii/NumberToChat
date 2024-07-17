@@ -1,8 +1,8 @@
 {
   "name": "numbertochat",
   "displayName": "NumberToChat",
-  "version": "0.0.1",
-  "description": "This extension streamlines your messaging experience by allowing you to quickly initiate a chat with any contact. Simply open the extension, enter a phone number, and press enter to be directed to the corresponding chat window",
+  "version": "1.0",
+  "description": "Streamline WhatsApp/Telegram messaging without saving phone number.",
   "author": "Rishikesh Bidkar",
   "scripts": {
     "dev": "plasmo dev",
@@ -22,13 +22,5 @@
     "@types/react-dom": "18.2.18",
     "prettier": "3.2.4",
     "typescript": "5.3.3"
-  },
-  "manifest": {
-    "host_permissions": [
-      "https://*/*"
-    ],
-    "permissions": [
-      "tabs"
-    ]
   }
 }

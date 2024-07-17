@@ -4,7 +4,7 @@ import React = require("react")
 
 function IndexPopup() {
   const [data, setData] = useState("")
-  const [wordCount, setWordCount] = useState<number>()
+  const [wordCount, setWordCount] = useState<number>(0)
 
   const handleChange = (e) => {
     const value = e.target.value
@@ -14,15 +14,19 @@ function IndexPopup() {
     }
   }
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && data.length === 10) {
+  const openWhatsApp = () => {
+    if (data.length === 10) {
       window.open(`https://web.whatsapp.com/send?phone=91${data}`, "_blank")
+    } else {
+      alert("Please enter a valid 10-digit phone number.")
     }
   }
 
-  const handleClick = () => {
+  const openTelegram = () => {
     if (data.length === 10) {
-      window.open(`https://web.whatsapp.com/send?phone=91${data}`, "_blank")
+      window.open(`https://t.me/+91${data}`, "_blank")
+    } else {
+      alert("Please enter a valid 10-digit phone number.")
     }
   }
 
@@ -36,7 +40,7 @@ function IndexPopup() {
         borderRadius: 10,
         padding: "16px",
         width: "400px",
-        height: "200px",
+        height: "250px",
         backgroundColor: "#141414",
         color: "white",
         textAlign: "center",
@@ -57,12 +61,11 @@ function IndexPopup() {
           appearance: "textfield",
           WebkitAppearance: "none",
           MozAppearance: "textfield"
-          //marginBottom: "20px"
         }}
         value={data}
         pattern="\d{10}"
         onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        //onKeyDown={handleKeyDown}
       />
       <p
         style={{
@@ -71,22 +74,42 @@ function IndexPopup() {
         }}>
         {wordCount}/10
       </p>
-
-      <button
-        onClick={handleClick}
+      <div
         style={{
-          backgroundColor: "tomato",
-          color: "white",
-          border: "none",
-          borderRadius: 5,
-          padding: "10px 20px",
-          fontSize: 18,
-          cursor: "pointer",
-          marginBottom: "20px"
+          flexDirection: "row"
         }}>
-        Open WhatsApp
-      </button>
+        <button
+          //onClick={handleClick}
+          onClick={openWhatsApp}
+          style={{
+            backgroundColor: "#25D366",
+            color: "white",
+            border: "none",
+            borderRadius: 5,
+            padding: "10px ",
+            margin: "1px",
+            fontSize: 15,
+            cursor: "pointer"
+          }}>
+          Open WhatsApp
+        </button>
+        <button
+          onClick={openTelegram}
+          style={{
+            backgroundColor: "#24A1DE",
+            color: "white",
+            border: "none",
+            borderRadius: 5,
+            padding: "10px",
+            fontSize: 15,
+            margin: "5px",
+            cursor: "pointer"
+          }}>
+          Open Telegram
+        </button>
+      </div>
 
+      <p>Note:- you must be logged into WhatsApp & Telegram web</p>
       <footer style={{ marginTop: "auto", fontSize: "15px", color: "red" }}>
         Crafted by
         <a
